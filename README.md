@@ -8,7 +8,7 @@ All data in this repo is invented. The 13 help-center articles describe a made-u
 
 ## Run it
 
-Python 3.9 or newer. No dependencies to run; `pytest` only for the tests.
+Python 3.12 (the version CI uses). No dependencies to run; `pytest` only for the tests.
 
 ```sh
 python retrieval_bench.py            # table for chunk sizes 20, 40, 80, 400 words
@@ -29,7 +29,11 @@ Your own files use the same shape as `data/corpus.json` (`{"docs": [{"id", "text
 
 ## Result on the bundled data
 
-Hit@1 at 80-word chunks: bm25 0.85, hybrid 0.80, ngram 0.70. At 20-word chunks, hybrid hit@1 on questions that share words with the article falls from 1.00 to 0.78. Questions that paraphrase the article ("customer wants to send an item back") are answered at rank 1 less than half the time by every strategy (hybrid 0.43).
+At 80-word chunks, hit@1 is bm25 0.85, hybrid 0.80, ngram 0.70. Hybrid did not beat plain BM25 here.
+
+Questions that reuse the article's words are answered at rank 1 every time by bm25 and hybrid. Questions that paraphrase the article ("customer wants to send an item back") are the weak spot: 7 of the 20 questions, and hit@1 on them is bm25 0.57, hybrid 0.43, ngram 0.29.
+
+Chunk size matters too. At 20-word chunks, hybrid hit@1 on the shared-word questions drops from 1.00 to 0.78.
 
 Run `python retrieval_bench.py --misses` to see the exact failures.
 
