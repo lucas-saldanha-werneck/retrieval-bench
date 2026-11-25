@@ -1,0 +1,25 @@
+{
+ "_note": "EXAMPLE DATA. Hand-written questions with one relevant article each. 'kind' marks how the question relates to the article wording.",
+ "queries": [
+  {"q": "how long until I get my refund", "doc": "refunds", "kind": "shared-words"},
+  {"q": "refunding an annual plan partially", "doc": "refunds", "kind": "word-variant"},
+  {"q": "download past invoices as PDF", "doc": "invoices", "kind": "shared-words"},
+  {"q": "add VAT number to my bill", "doc": "invoices", "kind": "paraphrase"},
+  {"q": "SAML single sign-on setup", "doc": "sso", "kind": "shared-words"},
+  {"q": "force everyone to log in through our identity provider", "doc": "sso", "kind": "paraphrase"},
+  {"q": "what does status 429 mean", "doc": "api-limits", "kind": "shared-words"},
+  {"q": "we are being throttled, how many calls are allowed", "doc": "api-limits", "kind": "paraphrase"},
+  {"q": "verify webhook signature HMAC", "doc": "webhooks", "kind": "shared-words"},
+  {"q": "receiving the same event twice", "doc": "webhooks", "kind": "paraphrase"},
+  {"q": "share a tracking link with the customer", "doc": "tracking", "kind": "shared-words"},
+  {"q": "does it check the postal code before buying a label", "doc": "address-validation", "kind": "word-variant"},
+  {"q": "customer wants to send an item back", "doc": "returns", "kind": "paraphrase"},
+  {"q": "printing prepaid return label for recipient", "doc": "returns", "kind": "shared-words"},
+  {"q": "compare carrier prices automatically", "doc": "rate-shopping", "kind": "word-variant"},
+  {"q": "who can delete the workspace", "doc": "team-roles", "kind": "shared-words"},
+  {"q": "how long do you keep shipment records", "doc": "data-retention", "kind": "shared-words"},
+  {"q": "erase a recipient's personal data", "doc": "data-retention", "kind": "word-variant"},
+  {"q": "import orders from a spreadsheet", "doc": "integrations", "kind": "paraphrase"},
+  {"q": "is there a post-mortem after outages", "doc": "status-page", "kind": "paraphrase"}
+ ]
+}
